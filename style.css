@@ -1,0 +1,536 @@
+/* ================================================
+   Project: Фигурные маршмеллоу на палочке
+   Created by Viktor T. | vitek25038.github.io
+   Purpose: внутренний проект для демонстрации
+   ================================================ */
+
+
+
+
+
+/* ==== Базовые настройки ==== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #fff0f5 0%, #ffeef5 100%);
+    color: #333;
+}
+
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffeef5;
+}
+
+.hero-title {
+    font-family: 'Chewy', cursive;
+    font-size: 3rem;
+    color: #cc3366;
+    margin-bottom: 12px;
+}
+
+.hero-subtitle {
+    font-family: 'Chewy', cursive;
+    font-size: 1.6rem;
+    color: #ff6699;
+    margin-bottom: 20px;
+}
+
+.hero-benefits {
+    font-family: 'Montserrat', sans-serif;
+    color: #cc3366;
+    font-size: 1.2rem;
+    margin: 0 auto 30px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.hero-benefits li {
+    margin: 6px 0;
+}
+
+
+.hero-btn {
+    background-color: #ff6699;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    animation: pulse 2s infinite ease-in-out;
+    box-shadow: 0 0 12px rgba(255, 105, 135, 0.3);
+}
+
+.hero-btn:hover {
+    background-color: #e05588;
+}
+
+
+h1,
+h2 {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    color: #cc3366;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    text-align: left;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+/* ==== Контейнеры ==== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    padding: 60px 20px;
+    background-color: #ffb3dd;
+    border-radius: 20px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+}
+
+.section-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* ==== Карточки ==== */
+.card {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 420px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* ==== Картинки ==== */
+.image-inline {
+    max-width: 100%;
+    max-height: 360px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: contain;
+}
+
+
+.image-inline:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ==== Кнопки ==== */
+.btn {
+    background-color: #ff66a5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 40px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff3388;
+    transform: scale(1.05);
+}
+
+/* ==== Хедер ==== */
+.hero {
+    background: linear-gradient(135deg, #ff99cc, #ffccff);
+    padding: 80px 20px;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.hero-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.hero-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(92%) sepia(100%) saturate(900%) hue-rotate(-30deg) brightness(1.1);
+}
+
+/* ==== Fancy text ==== */
+.fancy-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: #cc3366;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.fancy-block {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #c4365f;
+    text-align: center;
+}
+
+.fancy-block h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #b03060;
+}
+
+/* ==== Блок преимуществ ==== */
+.features-section {
+    padding: 60px 20px;
+    background-color: #ffb3dd;
+    border-radius: 20px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+}
+
+.features-column {
+    flex: 1;
+    min-width: 0;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    transition: transform 0.3s ease;
+    max-width: 420px;
+}
+
+.feature-card:hover {
+    transform: scale(1.02);
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    color: #ff66a5;
+    flex-shrink: 0;
+}
+
+.feature-text h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    margin: 0 0 8px;
+    font-weight: 600;
+    color: #b03060;
+    text-align: center;
+}
+
+.feature-text p {
+    font-family: 'Caveat', cursive;
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #c4365f;
+    text-align: center;
+}
+
+
+/* ==== Плавающие иконки ==== */
+.floating-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.float {
+    position: absolute;
+    width: 80px;
+    opacity: 0.7;
+    bottom: -100px;
+    animation-name: floatLoop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+}
+
+.filter-pink {
+    filter: invert(92%) sepia(100%) saturate(900%) hue-rotate(-30deg) brightness(1.1);
+}
+
+@keyframes floatLoop {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.marsh1 {
+    left: 5%;
+    animation-delay: 0s;
+    animation-duration: 30s;
+}
+
+.marsh2 {
+    left: 15%;
+    animation-delay: 3s;
+    animation-duration: 33s;
+}
+
+.marsh3 {
+    left: 25%;
+    animation-delay: 6s;
+    animation-duration: 36s;
+}
+
+.marsh4 {
+    left: 35%;
+    animation-delay: 9s;
+    animation-duration: 32s;
+}
+
+.marsh5 {
+    left: 45%;
+    animation-delay: 12s;
+    animation-duration: 34s;
+}
+
+.marsh6 {
+    left: 55%;
+    animation-delay: 15s;
+    animation-duration: 37s;
+}
+
+.marsh7 {
+    left: 65%;
+    animation-delay: 18s;
+    animation-duration: 31s;
+}
+
+.marsh8 {
+    left: 75%;
+    animation-delay: 21s;
+    animation-duration: 35s;
+}
+
+.marsh9 {
+    left: 85%;
+    animation-delay: 24s;
+    animation-duration: 38s;
+}
+
+.marsh10 {
+    left: 95%;
+    animation-delay: 27s;
+    animation-duration: 40s;
+}
+
+/* ==== Адаптив ==== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .hero-line {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-card {
+        max-width: 100%;
+    }
+
+    .feature-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-text p {
+        font-size: 0.95rem;
+    }
+
+    .feature-icon {
+        font-size: 1.6rem;
+    }
+
+    .section-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-column {
+        width: 100%;
+        max-width: 400px;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+        margin-top: 30px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(255, 105, 135, 0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 18px rgba(255, 105, 135, 0.5);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(255, 105, 135, 0.3);
+    }
+}
+
+.contact-full {
+    background-color: #ffb3dd;
+    text-align: center;
+    border-radius: 60px;
+    padding: 80px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 40px auto;
+}
+
+
+.contact-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-buttons .btn {
+    background-color: #ff66a5;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 12px rgba(255, 105, 135, 0.3);
+}
+
+.contact-buttons .btn:hover {
+    background-color: #e05588;
+    transform: scale(1.05);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
