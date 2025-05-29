@@ -275,9 +275,11 @@
     <div class="container">
         <h2>Оставить заявку</h2>
         <p class="fancy-text">Оставьте имя и номер — мы свяжемся с вами и всё расскажем</p>
-        <form class="form-inline" onsubmit="event.preventDefault(); alert('Заявка отправлена!');">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="tel" placeholder="Телефон" required>
+        <form class="form-inline" id="tg-form">
+
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+
             <button type="submit" class="btn">Отправить</button>
         </form>
     </div>
