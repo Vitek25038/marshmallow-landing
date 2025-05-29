@@ -163,6 +163,61 @@
 
 
 
+
+
+<section class="section fade-in">
+    <div class="container">
+        <div class="section-content">
+            <div class="section-text">
+                <h2>Почему это выгодно</h2>
+                <div class="fancy-text">
+                    <ul>
+                        <li>📈 Высокая наценка — до 80%</li>
+                        <li>🕒 Срок хранения — 6 месяцев</li>
+                        <li>🚚 Удобная доставка на склад</li>
+                        <li>📄 Есть все сертификаты</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/marsh5.jpg" alt="Преимущества сотрудничества" class="image-inline" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section fade-in catalog">
+    <div class="container">
+        <h2>Формы маршмеллоу</h2>
+        <div class="catalog-grid">
+            <div class="catalog-item">
+                <img src="images/marsh1.jpg" alt="Сердце" />
+                <p>Сердце</p>
+            </div>
+            <div class="catalog-item">
+                <img src="images/marsh2.jpg" alt="Мишка" />
+                <p>Мишка</p>
+            </div>
+            <div class="catalog-item">
+                <img src="images/marsh3.jpg" alt="Звезда" />
+                <p>Звезда</p>
+            </div>
+            <div class="catalog-item">
+                <img src="images/marsh4.jpg" alt="Снеговик" />
+                <p>Снеговик</p>
+            </div>
+            <div class="catalog-item">
+                <img src="images/marsh5.jpg" alt="Ёлочка" />
+                <p>Ёлочка</p>
+            </div>
+            <div class="catalog-item">
+                <img src="images/marsh6.jpg" alt="Подарок" />
+                <p>Подарок</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section fade-in">
     <div class="container">
         <div class="section-content">
@@ -191,26 +246,43 @@
     </div>
 </section>
 
-<section class="section fade-in">
+
+<section class="section fade-in order-steps">
     <div class="container">
-        <div class="section-content">
-            <div class="section-text">
-                <h2>Почему это выгодно</h2>
-                <div class="fancy-text">
-                    <ul>
-                        <li>📈 Высокая наценка — до 80%</li>
-                        <li>🕒 Срок хранения — 6 месяцев</li>
-                        <li>🚚 Удобная доставка на склад</li>
-                        <li>📄 Есть все сертификаты</li>
-                    </ul>
-                </div>
+        <h2>Как сделать заказ?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>Выбираете<br>форму маршмеллоу</p>
             </div>
-            <div class="card">
-                <img src="images/marsh5.jpg" alt="Преимущества сотрудничества" class="image-inline" />
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>Указываете<br>нужное количество</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>Получаете<br>расчёт и подтверждаете</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <p>Мы отправляем<br>ваш сладкий заказ</p>
             </div>
         </div>
     </div>
 </section>
+
+<section class="section fade-in request-form">
+    <div class="container">
+        <h2>Оставить заявку</h2>
+        <p class="fancy-text">Оставьте имя и номер — мы свяжемся с вами и всё расскажем</p>
+        <form class="form-inline" onsubmit="event.preventDefault(); alert('Заявка отправлена!');">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <button type="submit" class="btn">Отправить</button>
+        </form>
+    </div>
+</section>
+
 
 <!-- Контакты + Связь -->
 <section class="section contact-full fade-in" id="contact">
@@ -230,6 +302,36 @@
 
 
 <script src="script.js"></script>
+
+<script>
+    document.getElementById('tg-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const token = '8153282617:AAFkf8RYrgBcizphWitwgchCH2H7ufgRh1w';
+        const chat_id = '6223841439';
+        const name = this.name.value;
+        const phone = this.phone.value;
+        const message = `📩 Новая заявка с сайта:\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
+
+        fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: chat_id,
+                text: message
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+                    alert('Заявка отправлена!');
+                    this.reset();
+                } else {
+                    alert('Ошибка отправки заявки.');
+                }
+            });
+    });
+</script>
+
 
 </body>
 
