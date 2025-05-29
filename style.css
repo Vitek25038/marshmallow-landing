@@ -637,3 +637,24 @@ ul li {
     max-width: 200px;
     width: 100%;
 }
+
+.success-message {
+    opacity: 0;
+    transform: translateY(10px);
+    background-color: #cc3366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.success-message.show {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+    transition: all 0.4s ease;
+}
